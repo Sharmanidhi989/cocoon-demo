@@ -1,0 +1,11 @@
+<h1>Projects#index</h1>
+
+<% for project in @projects %>
+  <%= project.name %>
+  <br>
+  <% for task in project.tasks %>
+    <%= task.name %>
+    <br>
+  <% end %>
+  <br><br>
+<% end %>

@@ -1,0 +1,16 @@
+<%= form_for @project do |f| %>
+  <p>
+    Name: <%= f.text_field :name %>
+  </p>
+  <div id='tasks'>
+    <%= f.fields_for :tasks do |task| %>
+      <%= render 'task_fields', :f => task %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add task', f, :tasks %>
+    </div>
+  </div>
+  <p>
+    <%= f.submit 'Create Project' %>
+  </p>
+<% end %>
